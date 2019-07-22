@@ -1,0 +1,20 @@
+08:20:09 **** Incremental Build of configuration Debug for project LCD ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 LCD.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    4832 bytes (29.5% Full)
+(.text + .data + .bootloader)
+
+Data:        284 bytes (27.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+08:20:09 Build Finished. 0 errors, 0 warnings. (took 220ms)
+

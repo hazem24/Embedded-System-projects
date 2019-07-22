@@ -1,0 +1,30 @@
+/*
+ * main.c
+ *
+ *  Created on: Jun 7, 2019
+ *      Author: LENOVO
+ */
+
+#include "common_macros.h"
+#include "data_type.h"
+#include "micro_config.h"
+#include "adc.h"
+
+
+
+int main()
+{
+	/*
+	 * Init.
+	 */
+	ADC_Configuration config = {ADC_VoltageReference.INTERNAL};
+	ADC_init({});
+	sei();
+	/*
+	 * App.
+	 */
+	while( True )
+	{
+
+	}
+}

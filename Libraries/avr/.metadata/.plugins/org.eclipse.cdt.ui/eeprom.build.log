@@ -1,0 +1,55 @@
+20:14:11 **** Incremental Build of configuration Debug for project eeprom ****
+make all 
+Building file: ../eeprom.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"eeprom.d" -MT"eeprom.o" -c -o "eeprom.o" "../eeprom.c"
+In file included from ../micro_config.h:13,
+                 from ../eeprom.h:13,
+                 from ../eeprom.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../eeprom.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:13,
+                 from ../main.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building file: ../twi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"twi.d" -MT"twi.o" -c -o "twi.o" "../twi.c"
+In file included from ../micro_config.h:13,
+                 from ../twi.h:12,
+                 from ../twi.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../twi.c
+ 
+Building target: eeprom.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,eeprom.map -mmcu=atmega16 -o "eeprom.elf"  ./eeprom.o ./lcd.o ./main.o ./twi.o   
+Finished building target: eeprom.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S eeprom.elf  >"eeprom.lss"
+Finished building: eeprom.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 eeprom.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5624 bytes (34.3% Full)
+(.text + .data + .bootloader)
+
+Data:        264 bytes (25.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:14:12 Build Finished. 0 errors, 3 warnings. (took 1s.439ms)
+

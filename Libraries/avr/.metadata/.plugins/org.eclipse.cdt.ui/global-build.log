@@ -1,0 +1,346 @@
+12:57:00 **** Build of configuration Debug for project ICU ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+In file included from ../micro_config.h:9,
+                 from ../icu.h:13,
+                 from ../icu.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../icu.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:9,
+                 from ../lcd.h:13,
+                 from ../lcd.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_integerToString':
+../lcd.c:185: warning: pointer targets in passing argument 2 of 'itoa' differ in signedness
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5836 bytes (35.6% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (26.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:57:55 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5878 bytes (35.9% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (26.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:58:30 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5878 bytes (35.9% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (26.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:58:47 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5850 bytes (35.7% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (26.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:04:33 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"icu.d" -MT"icu.o" -c -o "icu.o" "../icu.c"
+In file included from ../micro_config.h:9,
+                 from ../icu.h:13,
+                 from ../icu.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../icu.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:9,
+                 from ../lcd.h:13,
+                 from ../lcd.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_integerToString':
+../lcd.c:185: warning: pointer targets in passing argument 2 of 'itoa' differ in signedness
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5394 bytes (32.9% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (26.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:05:12 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5372 bytes (32.8% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (26.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:05:57 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5388 bytes (32.9% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (26.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:11:14 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5392 bytes (32.9% Full)
+(.text + .data + .bootloader)
+
+Data:        275 bytes (26.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:11:42 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:9,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: ICU.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ICU.map -mmcu=atmega16 -o "ICU.elf"  ./icu.o ./lcd.o ./main.o   
+Finished building target: ICU.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ICU.elf  >"ICU.lss"
+Finished building: ICU.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 ICU.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5540 bytes (33.8% Full)
+(.text + .data + .bootloader)
+
+Data:        275 bytes (26.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

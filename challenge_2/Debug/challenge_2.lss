@@ -1,0 +1,191 @@
+
+challenge_2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000128  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000001  00800060  00800060  0000019c  2**0
+                  ALLOC
+  2 .stab         00000414  00000000  00000000  0000019c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000847  00000000  00000000  000005b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 77 00 	jmp	0xee	; 0xee <__vector_19>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a1 36       	cpi	r26, 0x61	; 97
+  6c:	b1 07       	cpc	r27, r17
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 3e 00 	call	0x7c	; 0x7c <main>
+  74:	0c 94 92 00 	jmp	0x124	; 0x124 <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <main>:
+#include <avr/interrupt.h>
+
+void timer_init0();
+unsigned char counter = 0;
+int main( void )
+{
+  7c:	df 93       	push	r29
+  7e:	cf 93       	push	r28
+  80:	cd b7       	in	r28, 0x3d	; 61
+  82:	de b7       	in	r29, 0x3e	; 62
+
+	/* App Init. */
+	DDRB = DDRB | ( 1 << PB3 );//Output.
+  84:	a7 e3       	ldi	r26, 0x37	; 55
+  86:	b0 e0       	ldi	r27, 0x00	; 0
+  88:	e7 e3       	ldi	r30, 0x37	; 55
+  8a:	f0 e0       	ldi	r31, 0x00	; 0
+  8c:	80 81       	ld	r24, Z
+  8e:	88 60       	ori	r24, 0x08	; 8
+  90:	8c 93       	st	X, r24
+	PORTB |= ( 1 << PC0 ) | ( 1 << PC1 ) | ( 1 << PC2 );//Output.
+  92:	a8 e3       	ldi	r26, 0x38	; 56
+  94:	b0 e0       	ldi	r27, 0x00	; 0
+  96:	e8 e3       	ldi	r30, 0x38	; 56
+  98:	f0 e0       	ldi	r31, 0x00	; 0
+  9a:	80 81       	ld	r24, Z
+  9c:	87 60       	ori	r24, 0x07	; 7
+  9e:	8c 93       	st	X, r24
+	GICR |= (1 << INT0);
+  a0:	ab e5       	ldi	r26, 0x5B	; 91
+  a2:	b0 e0       	ldi	r27, 0x00	; 0
+  a4:	eb e5       	ldi	r30, 0x5B	; 91
+  a6:	f0 e0       	ldi	r31, 0x00	; 0
+  a8:	80 81       	ld	r24, Z
+  aa:	80 64       	ori	r24, 0x40	; 64
+  ac:	8c 93       	st	X, r24
+	timer_init0();
+  ae:	0e 94 5b 00 	call	0xb6	; 0xb6 <timer_init0>
+	sei();
+  b2:	78 94       	sei
+  b4:	ff cf       	rjmp	.-2      	; 0xb4 <main+0x38>
+
+000000b6 <timer_init0>:
+	{
+	}
+}
+
+void timer_init0(  )
+{
+  b6:	df 93       	push	r29
+  b8:	cf 93       	push	r28
+  ba:	cd b7       	in	r28, 0x3d	; 61
+  bc:	de b7       	in	r29, 0x3e	; 62
+
+	TCCR0 |= (1<<FOC0) | ( 1 << WGM01 ) | ( 1 << CS00 );
+  be:	a3 e5       	ldi	r26, 0x53	; 83
+  c0:	b0 e0       	ldi	r27, 0x00	; 0
+  c2:	e3 e5       	ldi	r30, 0x53	; 83
+  c4:	f0 e0       	ldi	r31, 0x00	; 0
+  c6:	80 81       	ld	r24, Z
+  c8:	89 68       	ori	r24, 0x89	; 137
+  ca:	8c 93       	st	X, r24
+	TCNT0 = 0;
+  cc:	e2 e5       	ldi	r30, 0x52	; 82
+  ce:	f0 e0       	ldi	r31, 0x00	; 0
+  d0:	10 82       	st	Z, r1
+	OCR0  = 56;// 200 Counting.
+  d2:	ec e5       	ldi	r30, 0x5C	; 92
+  d4:	f0 e0       	ldi	r31, 0x00	; 0
+  d6:	88 e3       	ldi	r24, 0x38	; 56
+  d8:	80 83       	st	Z, r24
+	TIMSK |= (1	<< OCIE0 );//Module Interrupt Enable.
+  da:	a9 e5       	ldi	r26, 0x59	; 89
+  dc:	b0 e0       	ldi	r27, 0x00	; 0
+  de:	e9 e5       	ldi	r30, 0x59	; 89
+  e0:	f0 e0       	ldi	r31, 0x00	; 0
+  e2:	80 81       	ld	r24, Z
+  e4:	82 60       	ori	r24, 0x02	; 2
+  e6:	8c 93       	st	X, r24
+}
+  e8:	cf 91       	pop	r28
+  ea:	df 91       	pop	r29
+  ec:	08 95       	ret
+
+000000ee <__vector_19>:
+
+
+ISR(TIMER0_COMP_vect)
+{
+  ee:	1f 92       	push	r1
+  f0:	0f 92       	push	r0
+  f2:	0f b6       	in	r0, 0x3f	; 63
+  f4:	0f 92       	push	r0
+  f6:	11 24       	eor	r1, r1
+  f8:	8f 93       	push	r24
+  fa:	ef 93       	push	r30
+  fc:	ff 93       	push	r31
+  fe:	df 93       	push	r29
+ 100:	cf 93       	push	r28
+ 102:	cd b7       	in	r28, 0x3d	; 61
+ 104:	de b7       	in	r29, 0x3e	; 62
+	PORTC++;
+ 106:	e5 e3       	ldi	r30, 0x35	; 53
+ 108:	f0 e0       	ldi	r31, 0x00	; 0
+ 10a:	80 81       	ld	r24, Z
+ 10c:	8f 5f       	subi	r24, 0xFF	; 255
+ 10e:	80 83       	st	Z, r24
+}
+ 110:	cf 91       	pop	r28
+ 112:	df 91       	pop	r29
+ 114:	ff 91       	pop	r31
+ 116:	ef 91       	pop	r30
+ 118:	8f 91       	pop	r24
+ 11a:	0f 90       	pop	r0
+ 11c:	0f be       	out	0x3f, r0	; 63
+ 11e:	0f 90       	pop	r0
+ 120:	1f 90       	pop	r1
+ 122:	18 95       	reti
+
+00000124 <_exit>:
+ 124:	f8 94       	cli
+
+00000126 <__stop_program>:
+ 126:	ff cf       	rjmp	.-2      	; 0x126 <__stop_program>
