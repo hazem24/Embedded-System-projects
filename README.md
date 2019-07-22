@@ -1,2 +1,2 @@
 # Embedded-System-projects
- All projects in My CV in Embedded system field
+ All projects in My CV (Atmega projects) in Embedded system field
